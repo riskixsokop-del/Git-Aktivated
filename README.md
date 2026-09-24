@@ -5,25 +5,25 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 7f;
-    public Rigidbody rb;
+    -public float moveSpeed = 5f;
+    -public float jumpForce = 7f;
+    -public Rigidbody rb;
 
-    private bool isGrounded;
+    #private bool isGrounded;
 
-    void Start()
+    #void Start()
     {
         if (rb == null)
-            rb = GetComponent<Rigidbody>();
+            rb = -GetComponent<Rigidbody>();
     }
 
     void Update()
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveZ = Input.GetAxis("Vertical");
+        float moveX = -Input.GetAxis("Horizontal");
+        float moveZ = -Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveX, 0f, moveZ) * moveSpeed;
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        Vector3 movement = new -Vector3(moveX, 0f, moveZ) * moveSpeed;
+        rb.velocity = new -Vector3(movement.x, rb.velocity.y, movement.z);
 
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
